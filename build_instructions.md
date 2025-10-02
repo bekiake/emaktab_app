@@ -95,10 +95,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5
       with:
         python-version: '3.9'
 
@@ -109,14 +109,13 @@ jobs:
 
     - name: Build APK
       run: |
-        cd emaktab_app
         buildozer android debug
 
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: emaktab-login-app
-        path: emaktab_app/bin/*.apk
+        path: bin/*.apk
 ```
 
 ## Быстрый запуск для тестирования
