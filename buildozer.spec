@@ -36,13 +36,13 @@ fullscreen = 0
 android.permissions = INTERNET,ACCESS_NETWORK_STATE,ACCESS_WIFI_STATE
 
 # (int) Target Android API, should be as high as possible.
-android.api = 33
+android.api = 30
 
 # (int) Minimum API your APK / AAB will support.
 android.minapi = 21
 
 # (str) Android NDK version to use
-android.ndk = 25b
+android.ndk = 23b
 
 # (str) Android SDK directory (if empty, it will be automatically downloaded.)
 #android.sdk_path =
@@ -51,10 +51,19 @@ android.ndk = 25b
 #android.ant_path =
 
 # (str) Android build tools version to use
-android.build_tools = 33.0.2
+android.build_tools = 30.0.3
 
 # (bool) Whether to accept Android SDK license
 android.accept_sdk_license = True
+
+# (str) python-for-android fork to use, defaults to upstream (kivy)
+#p4a.fork = kivy
+
+# (str) python-for-android branch to use, defaults to master
+#p4a.branch = master
+
+# (str) python-for-android git url, defaults to https://github.com/kivy/python-for-android
+#p4a.url = https://github.com/kivy/python-for-android
 
 # (str) Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 # In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.

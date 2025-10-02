@@ -1,0 +1,38 @@
+name: Build APK with Docker
+
+on:
+  workflow_dispatch:  # Ручной запуск
+  push:
+    branches: [ docker-build ]
+
+jobs:
+  build-docker:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Build Docker image
+      run: |
+        echo "Building Docker image for APK compilation..."
+        docker build -t emaktab-builder .
+
+    - name: Build APK in Docker
+      run: |
+        echo "Building APK inside Docker container..."
+        docker run --rm -v ${PWD}/bin:/app/bin emaktab-builder
+
+    - name: List generated files
+      run: |
+        echo "Files in bin directory:"
+        ls -la bin/ || echo "No bin directory found"
+        echo "Searching for APK files:"
+        find . -name "*.apk" -type f
+
+    - name: Upload APK artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: emaktab-login-app-docker-${{ github.run_number }}
+        path: bin/*.apk
+        if-no-files-found: error

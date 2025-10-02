@@ -153,8 +153,16 @@ on:
 ### Ошибка "Android SDK Build-Tools license not accepted"
 Исправлено в workflow - лицензии Android SDK автоматически принимаются перед сборкой.
 
-### Ошибка "Aidl not found"
-Исправлено указанием конкретной версии build-tools (33.0.2) в `buildozer.spec`.
+### Ошибка "autoconf failed" / "AC_TRY_COMPILE is obsolete"
+Исправлено понижением версий NDK (23b) и API (30) для лучшей совместимости с autotools. Также добавлен Docker-based build как альтернатива.
+
+### Альтернативная сборка через Docker
+Если основной workflow не работает, используйте Docker workflow:
+```bash
+# Запустить Docker сборку вручную
+docker build -t emaktab-builder .
+docker run --rm -v $(pwd)/bin:/app/bin emaktab-builder
+```
 
 ### Ошибка входа в приложении
 - Проверьте правильность credentials.csv
