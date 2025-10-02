@@ -30,6 +30,9 @@ ENV/
 bin/
 *.apk
 
+# Test scripts (optional)
+# test_buildozer.bat
+
 # IDE
 .vscode/
 .idea/

@@ -147,8 +147,11 @@ on:
 ### Ошибка "libtinfo5" на Ubuntu 24.04
 Исправлено в workflow файле - используется `libncurses6` вместо устаревшего `libtinfo5`.
 
-### Ошибки Java/OpenJDK
-Workflow настроен на использование OpenJDK 17, что совместимо с современными версиями Android SDK.
+### Ошибка "Cython not found"
+Исправлено в workflow - Cython теперь устанавливается автоматически как зависимость buildozer.
+
+### Предупреждение "android.sdk is deprecated"
+Исправлено в `buildozer.spec` - используется `android.api` вместо устаревшего `android.sdk`.
 
 ### Ошибка входа в приложении
 - Проверьте правильность credentials.csv

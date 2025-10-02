@@ -54,6 +54,8 @@ jobs:
     - name: Verify buildozer configuration
       run: |
         echo "Buildozer configuration check:"
+        echo "Checking buildozer.spec syntax..."
+        python -c "import configparser; c = configparser.ConfigParser(); c.read('buildozer.spec'); print('✅ buildozer.spec syntax is valid')"
         buildozer android requirements || echo "Requirements check completed"
 
     - name: Build APK with Buildozer
