@@ -44,6 +44,18 @@ android.minapi = 21
 # (str) Android NDK version to use
 android.ndk = 25b
 
+# (str) Android SDK directory (if empty, it will be automatically downloaded.)
+#android.sdk_path =
+
+# (str) ANT directory (if empty, it will be automatically downloaded.)
+#android.ant_path =
+
+# (str) Android build tools version to use
+android.build_tools = 33.0.2
+
+# (bool) Whether to accept Android SDK license
+android.accept_sdk_license = True
+
 # (str) Android arch to build for, choices: armeabi-v7a, arm64-v8a, x86, x86_64
 # In past, was `android.arch` as we weren't supporting builds for multiple archs at the same time.
 android.archs = arm64-v8a, armeabi-v7a

@@ -150,8 +150,11 @@ on:
 ### Ошибка "Cython not found"
 Исправлено в workflow - Cython теперь устанавливается автоматически как зависимость buildozer.
 
-### Предупреждение "android.sdk is deprecated"
-Исправлено в `buildozer.spec` - используется `android.api` вместо устаревшего `android.sdk`.
+### Ошибка "Android SDK Build-Tools license not accepted"
+Исправлено в workflow - лицензии Android SDK автоматически принимаются перед сборкой.
+
+### Ошибка "Aidl not found"
+Исправлено указанием конкретной версии build-tools (33.0.2) в `buildozer.spec`.
 
 ### Ошибка входа в приложении
 - Проверьте правильность credentials.csv
